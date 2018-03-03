@@ -11,6 +11,8 @@ import { User } from '../models/user.model';
 export class RegistrationFormComponent implements OnInit {
   form: FormGroup;
 
+  showPassword: boolean = false;
+
   constructor() { }
 
   ngOnInit() {
@@ -22,6 +24,10 @@ export class RegistrationFormComponent implements OnInit {
       password: new FormControl('', [Validators.required, Validators.minLength(4)]),
       termsAcceptance: new FormControl('', Validators.required)
     })
+  }
+
+  toggleShowPassword($event) {
+    this.showPassword = $event.target.checked
   }
 
   registerUser() {

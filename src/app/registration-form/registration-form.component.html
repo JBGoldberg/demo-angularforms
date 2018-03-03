@@ -13,8 +13,28 @@
     <label for="username">E-MAIL</label>
     <input type="text" class="form-control" formControlName="email">
 
+
+<div class="">
+  <div class="">
+
+  </div>
+
+  <div class="">
     <label for="password">PASSWORT</label>
-    <input type="text" class="form-control" formControlName="password">
+    <input type="text" class="form-control" formControlName="password" *ngIf="showPassword">
+
+
+    <input type="password" class="form-control" formControlName="password" *ngIf="!showPassword">
+  </div>
+
+  <div class="">
+    <label class="center-block">
+      <input type="checkbox" (change)="toggleShowPassword($event)">
+      Anzeigen
+    </label>
+  </div>
+</div>
+
 
     <div class="checkbox">
   <label class="center-block">
@@ -24,7 +44,5 @@
 </div>
 
   </div>
-  <button type="submit" [disabled]="form.invalid">Jetzt registrieren</button>
-
-
+  <button class="btn btn-success" type="submit" [disabled]="form.invalid">Jetzt registrieren</button>
 </form>

@@ -1,3 +1,30 @@
-<p>
-  registration-form works!
-</p>
+<form novalidate [formGroup]="form" (ngSubmit)="registerUser()">
+  <div class="form-group">
+
+    <label for="firstNameField">VORNAME</label>
+    <input type="text" class="form-control" formControlName="firstName">
+
+    <label for="lastName">NACHNAME</label>
+    <input type="text" class="form-control" formControlName="lastName">
+
+    <label for="username">MITGLIEDSNAME</label>
+    <input type="text" class="form-control" formControlName="username">
+
+    <label for="username">E-MAIL</label>
+    <input type="text" class="form-control" formControlName="email">
+
+    <label for="password">PASSWORT</label>
+    <input type="text" class="form-control" formControlName="password">
+
+    <div class="checkbox">
+  <label class="center-block">
+    <input type="checkbox" formControlName="termsAcceptance">
+    Ich willige die Verarbeitung und Nutzung meiner Daten gemäß der Datenschutzerklärung ein.
+  </label>
+</div>
+
+  </div>
+  <button type="submit" [disabled]="form.invalid">Jetzt registrieren</button>
+
+
+</form>

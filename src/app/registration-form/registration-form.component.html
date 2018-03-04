@@ -3,7 +3,10 @@
     <div class="form-group">
 
       <label for="firstNameField">VORNAME</label>
-      <input type="text" class="form-control" formControlName="firstName">
+      <div class="iconized-field inconized iconized-field-solid">
+          <input type="text" class="form-control" formControlName="firstName">
+          <i class="fa fa-user fa-lg fa-fw" aria-hidden="true" style="padding-left: 14px; padding-right: 28px;"></i>
+      </div>
 
       <div *ngIf="form.get('firstName').hasError('required') && form.get('firstName').touched" class="alert alter-danger">
         muss ausgefüllt werden
@@ -12,16 +15,22 @@
       <label for="lastName">NACHNAME</label>
         <div class="iconized-field inconized iconized-field-solid">
             <input type="text" class="form-control" formControlName="lastName">
-            <i class="fa fa-user fa-lg fa-lw" aria-hidden="true"></i>
+            <i class="fa fa-user fa-lg fa-fw" aria-hidden="true" style="padding-left: 14px; padding-right: 28px;"></i>
         </div>
 
-
-
       <label for="username">MITGLIEDSNAME</label>
-      <input type="text" class="form-control" formControlName="username">
+      <div class="iconized-field inconized iconized-field-solid">
+          <input type="text" class="form-control" formControlName="username" placeholder="Dein Mitgliedsname ist öffentlich">
+          <i class="fa fa-user fa-lg fa-fw" aria-hidden="true" style="padding-left: 14px; padding-right: 28px;"></i>
+      </div>
+
 
       <label for="username">E-MAIL</label>
-      <input type="text" class="form-control" formControlName="email">
+      <div class="iconized-field inconized iconized-field-solid">
+          <input type="text" class="form-control" formControlName="email">
+          <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true" style="padding-left: 10px; padding-right: 31px;"></i>
+      </div>
+
 
 
       <div class="">
@@ -31,10 +40,12 @@
 
         <div class="">
           <label for="password">PASSWORT</label>
-          <input type="text" class="form-control" formControlName="password" *ngIf="showPassword">
+          <div class="iconized-field inconized iconized-field-solid">
+            <input type="text" class="form-control" formControlName="password" *ngIf="showPassword">
+            <input type="password" class="form-control" formControlName="password" *ngIf="!showPassword">
+              <i class="fa fa-lock fa-lg fa-fw" aria-hidden="true" style="padding-left: 13px; padding-right: 28px;"></i>
+          </div>
 
-
-          <input type="password" class="form-control" formControlName="password" *ngIf="!showPassword">
         </div>
 
         <div class="">
@@ -54,7 +65,9 @@
       </div>
 
     </div>
-    <button class="btn btn-success btn-block" type="submit" [disabled]="form.invalid">Jetzt registrieren</button>
+    <button class="btn btn-success btn-block" style="background-color: #a8d000; border-color: #a8d000;" type="submit" [disabled]="form.invalid">
+      Jetzt registrieren
+    </button>
 
 
 

@@ -2,7 +2,7 @@
   background-color: white;
 }
 
-input[type=text] {
+input[type=text], input[type=password] {
   width: 100%;
   border: 1px solid lightgrey;
   border-radius: 4px;
@@ -13,12 +13,12 @@ input[type=text] {
   transition: .5s;
 }
 
-input[type=text]:focus {
+input[type=text]:focus, input[type=password]:focus {
   border-color: lighblue;
   box-shadow: 0 0 8px 0 lightblue;
 }
 
-.iconized-field input[type=text] {
+.iconized-field input[type=text], input[type=password] {
   padding-left: 50px;
 }
 
@@ -29,24 +29,30 @@ input[type=text]:focus {
   position: absolute;
   left: 1px;
   top: 1px;
-  padding: 9px 8px;
+  padding: 12px 21px;
   color: WhiteSmoke;
   trasition: .5s;
+
 }
-.iconized-field input[type=text]:focus + i {
+.iconized-field input[type=text]:focus + i, input[type=password]:focus + i {
   color: lightblue;
 }
 
 .iconized-field.iconized-field-solid i {
   background-color: WhiteSmoke;
   color: lightgrey;
-  padding: 12px 13px;
+  padding: 12px 21px;
   border-radius:  4px 0 0 4px;
   border-right-color: lightgrey;
   border-right-style: solid;
   border-width: 1px;
 }
 
-.iconized-field.iconized-field-solid input[type=text] {
+.iconized-field.iconized-field-solid input[type=text], input[type=password] {
   background-color: white;
+}
+
+::placeholder {
+    color: lightgrey;
+    opacity: 1;
 }

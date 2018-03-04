@@ -1,3 +1,52 @@
 .box {
   background-color: white;
 }
+
+input[type=text] {
+  width: 100%;
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+  margin: 8px 0;
+  outline: none;
+  padding: 8px;
+  box-sizing: border-box;
+  transition: .5s;
+}
+
+input[type=text]:focus {
+  border-color: lighblue;
+  box-shadow: 0 0 8px 0 lightblue;
+}
+
+.iconized-field input[type=text] {
+  padding-left: 50px;
+}
+
+.iconized-field {
+  position: relative;
+}
+.iconized-field i {
+  position: absolute;
+  left: 1px;
+  top: 1px;
+  padding: 9px 8px;
+  color: WhiteSmoke;
+  trasition: .5s;
+}
+.iconized-field input[type=text]:focus + i {
+  color: lightblue;
+}
+
+.iconized-field.iconized-field-solid i {
+  background-color: WhiteSmoke;
+  color: lightgrey;
+  padding: 12px 13px;
+  border-radius:  4px 0 0 4px;
+  border-right-color: lightgrey;
+  border-right-style: solid;
+  border-width: 1px;
+}
+
+.iconized-field.iconized-field-solid input[type=text] {
+  background-color: white;
+}

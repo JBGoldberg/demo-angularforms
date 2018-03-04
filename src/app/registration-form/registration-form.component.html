@@ -1,48 +1,57 @@
-<form novalidate [formGroup]="form" (ngSubmit)="registerUser()">
-  <div class="form-group">
+<div class="box">
+  <form novalidate [formGroup]="form" (ngSubmit)="registerUser()">
+    <div class="form-group">
 
-    <label for="firstNameField">VORNAME</label>
-    <input type="text" class="form-control" formControlName="firstName">
+      <label for="firstNameField">VORNAME</label>
+      <input type="text" class="form-control" formControlName="firstName">
 
-    <label for="lastName">NACHNAME</label>
-    <input type="text" class="form-control" formControlName="lastName">
+      <div *ngIf="form.get('firstName').hasError('required') && form.get('firstName').touched" class="alert alter-danger">
+        muss ausgefüllt werden
+      </div>
 
-    <label for="username">MITGLIEDSNAME</label>
-    <input type="text" class="form-control" formControlName="username">
+      <label for="lastName">NACHNAME</label>
+      <input type="text" class="form-control" formControlName="lastName">
 
-    <label for="username">E-MAIL</label>
-    <input type="text" class="form-control" formControlName="email">
+      <label for="username">MITGLIEDSNAME</label>
+      <input type="text" class="form-control" formControlName="username">
 
-
-<div class="">
-  <div class="">
-
-  </div>
-
-  <div class="">
-    <label for="password">PASSWORT</label>
-    <input type="text" class="form-control" formControlName="password" *ngIf="showPassword">
+      <label for="username">E-MAIL</label>
+      <input type="text" class="form-control" formControlName="email">
 
 
-    <input type="password" class="form-control" formControlName="password" *ngIf="!showPassword">
-  </div>
+      <div class="">
+        <div class="">
 
-  <div class="">
-    <label class="center-block">
-      <input type="checkbox" (change)="toggleShowPassword($event)">
-      Anzeigen
+        </div>
+
+        <div class="">
+          <label for="password">PASSWORT</label>
+          <input type="text" class="form-control" formControlName="password" *ngIf="showPassword">
+
+
+          <input type="password" class="form-control" formControlName="password" *ngIf="!showPassword">
+        </div>
+
+        <div class="">
+          <label class="center-block">
+        <input type="checkbox" (change)="toggleShowPassword($event)">
+        Anzeigen
+      </label>
+        </div>
+      </div>
+
+
+      <div class="checkbox">
+        <label class="center-block">
+      <input type="checkbox" formControlName="termsAcceptance">
+      Ich willige die Verarbeitung und Nutzung meiner Daten gemäß der Datenschutzerklärung ein.
     </label>
-  </div>
+      </div>
+
+    </div>
+    <button class="btn btn-success btn-block" type="submit" [disabled]="form.invalid">Jetzt registrieren</button>
+
+
+
+  </form>
 </div>
-
-
-    <div class="checkbox">
-  <label class="center-block">
-    <input type="checkbox" formControlName="termsAcceptance">
-    Ich willige die Verarbeitung und Nutzung meiner Daten gemäß der Datenschutzerklärung ein.
-  </label>
-</div>
-
-  </div>
-  <button class="btn btn-success" type="submit" [disabled]="form.invalid">Jetzt registrieren</button>
-</form>

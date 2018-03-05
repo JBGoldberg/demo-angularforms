@@ -1,8 +1,8 @@
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms'
 
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { FormsModule } from '@angular/forms';
 
 import { RegistrationFormComponent } from './registration-form.component';
 
@@ -13,9 +13,8 @@ describe('RegistrationFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [FormsModule],
+      imports: [ReactiveFormsModule],
       declarations: [RegistrationFormComponent]
-
     })
       .compileComponents();
   }));
@@ -32,39 +31,96 @@ describe('RegistrationFormComponent', () => {
   });
 
   it('should validate a required FIRST NAME', () => {
-    fixture.detectChanges();
 
-    let input = debugElement.query(By.css('#firstNameField'));
-    let inputElement = input.nativeElement;
+    let errors = {};
+    let field = component.form.controls['firstName'];
+    expect(field.valid).toBeFalsy();
 
-    inputElement.value = "Teste";
-    inputElement.dispatchEvent(new Event('input'));
-    fixture.detectChanges();
+    // field is required
+    errors = field.errors || {};
+    expect(errors['required']).toBeTruthy();
 
-    console.log(component.form.controls['firstName'])
-
-    // expect(component.form.valid).toBeFalsy();
-
+    // Set field to something
+    field.setValue("Robert");
+    errors = field.errors || {};
+    expect(errors['required']).toBeFalsy();
 
   });
 
-  xit('should validate a required LAST NAME', () => {
-    // expect(component).toBeTruthy();
+  it('should validate a required LAST NAME', () => {
+
+    let errors = {};
+    let field = component.form.controls['lastName'];
+    expect(field.valid).toBeFalsy();
+
+    // field is required
+    errors = field.errors || {};
+    expect(errors['required']).toBeTruthy();
+
+    // Set field to something
+    field.setValue("Downey");
+    errors = field.errors || {};
+    expect(errors['required']).toBeFalsy();
+
   });
 
-  xit('should validate a required USERNAME', () => {
-    // expect(component).toBeTruthy();
+  it('should validate a required USERNAME', () => {
+    let errors = {};
+    let field = component.form.controls['username'];
+    expect(field.valid).toBeFalsy();
+
+    // field is required
+    errors = field.errors || {};
+    expect(errors['required']).toBeTruthy();
+
+    // Set field to something
+    field.setValue("ironman");
+    errors = field.errors || {};
+    expect(errors['required']).toBeFalsy();
   });
 
-  xit('should validate a required and valid EMAIL', () => {
-    // expect(component).toBeTruthy();
+  it('should validate a required and valid EMAIL', () => {
+    let errors = {};
+    let field = component.form.controls['email'];
+    expect(field.valid).toBeFalsy();
+
+    // field is required
+    errors = field.errors || {};
+    expect(errors['required']).toBeTruthy();
+
+    // Set email to something wrong
+    field.setValue("My Email");
+    errors = field.errors || {};
+    expect(errors['required']).toBeFalsy();
+    expect(errors['email']).toBeTruthy();
+
+    // Set email to something correct
+    field.setValue("ironman@avengers.com");
+    errors = field.errors || {};
+    expect(errors['required']).toBeFalsy();
+    expect(errors['email']).toBeFalsy();
   });
 
-  xit('should validate a required PASSWORD', () => {
-    // expect(component).toBeTruthy();
+  it('should validate a required PASSWORD with mininum lenght', () => {
+    let errors = {};
+    let field = component.form.controls['password'];
+    expect(field.valid).toBeFalsy();
+
+    // field is required
+    errors = field.errors || {};
+    expect(errors['required']).toBeTruthy();
+
+    // Set password to something wrong
+    field.setValue("12");
+    errors = field.errors || {};
+    expect(errors['required']).toBeFalsy();
+    expect(errors['minlength']).toBeTruthy();
+
+    // Set password to something correct
+    field.setValue("smnd5sdjmdu");
+    errors = field.errors || {};
+    expect(errors['required']).toBeFalsy();
+    expect(errors['minlength']).toBeFalsy();
   });
 
-  xit('should validate a required TERMS acceptance', () => {
-    // expect(component).toBeTruthy();
-  });
 });

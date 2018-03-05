@@ -1,7 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { User } from '../models/user.model';
+
+declare var $: any
 
 @Component({
   selector: 'gdg-registration-form',
@@ -9,8 +11,8 @@ import { User } from '../models/user.model';
   styleUrls: ['./registration-form.component.css']
 })
 export class RegistrationFormComponent implements OnInit {
-  form: FormGroup;
 
+  form: FormGroup;
   showPassword: boolean = false;
 
   constructor() { }
@@ -24,6 +26,25 @@ export class RegistrationFormComponent implements OnInit {
       password: new FormControl('', [Validators.required, Validators.minLength(4)]),
       termsAcceptance: new FormControl('', Validators.required)
     })
+
+
+  }
+
+  showError(_icon) {
+
+    // Retreive form control to analise
+    let control = this.form.controls[_icon.id]
+
+    if (control.invalid) {
+
+      // Show error message for a while and hide
+      $(_icon).tooltip('show')
+      setInterval(() => {
+        $(_icon).tooltip('hide')
+      }, 4000);
+
+    }
+
   }
 
   toggleShowPassword($event) {

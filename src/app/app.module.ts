@@ -2,8 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms'
 
-import { TooltipModule } from "ng2-tooltip";
-
 import { AppComponent } from './app.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 
@@ -15,8 +13,7 @@ import { RegistrationFormComponent } from './registration-form/registration-form
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule,
-    TooltipModule
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,38 +4,123 @@
 
       <label for="firstNameField">VORNAME</label>
       <div class="iconized-field inconized iconized-field-solid">
-        <input id="firstNameField" type="text" class="form-control" formControlName="firstName">
-        <i class="fa fa-user fa-lg fa-fw" aria-hidden="true" style="padding-left: 14px; padding-right: 28px;"></i>
-      </div>
+        <input
+          id="firstNameField"
+          type="text"
+          class="form-control"
+          formControlName="firstName"
+          (blur)="showError(firstName)">
+            <i
+              #firstName
+              id='firstName'
+              class="red-tooltip"
+              style="background-color: yellow"
+              data-toggle="tooltip"
+              data-trigger="manual"
+              data-placement="bottom"
+              data-html="true"
+              title="<div style='background-color: #fff1cc; color: #ff3507'>VORNAME muss ausgefüllt werden</div>"
+              class="fa fa-user fa-lg fa-fw"
+              aria-hidden="true"
+              style="padding-left: 14px; padding-right: 28px;"></i>
+          </div>
 
-      <div *ngIf="form.get('firstName').hasError('required') && form.get('firstName').touched" class="alert alter-danger">
-        muss ausgefüllt werden
-      </div>
 
       <label for="lastNameField">NACHNAME</label>
       <div class="iconized-field inconized iconized-field-solid">
-        <input id="lastNameField" type="text" class="form-control" formControlName="lastName">
-        <i class="fa fa-user fa-lg fa-fw" aria-hidden="true" style="padding-left: 14px; padding-right: 28px;"></i>
+        <input
+          id="lastNameField"
+          type="text"
+          class="form-control"
+          formControlName="lastName"
+          (blur)="showError(lastName)">
+        <i
+          #lastName
+          id='lastName'
+          class="fa fa-user fa-lg fa-fw"
+          aria-hidden="true"
+          style="padding-left: 14px; padding-right: 28px;"
+          data-toggle="tooltip"
+          data-trigger="manual"
+          data-placement="bottom"
+          data-html="true"
+          title="<div style='background-color: #fff1cc; color: #ff3507'>NACHNAME muss ausgefüllt werden</div>"></i>
       </div>
 
       <label for="usernameField">MITGLIEDSNAME</label>
       <div class="iconized-field inconized iconized-field-solid">
-        <input id="usernameField" type="text" class="form-control" formControlName="username" placeholder="Dein Mitgliedsname ist öffentlich">
-        <i class="fa fa-user fa-lg fa-fw" aria-hidden="true" style="padding-left: 14px; padding-right: 28px;"></i>
+        <input
+          id="username"
+          type="text"
+          class="form-control"
+          formControlName="username"
+          placeholder="Dein Mitgliedsname ist öffentlich"
+          (blur)="showError(username)">
+        <i
+          #username
+          id='username'
+          class="fa fa-user fa-lg fa-fw"
+          aria-hidden="true"
+          style="padding-left: 14px; padding-right: 28px;"
+          data-toggle="tooltip"
+          data-trigger="manual"
+          data-placement="bottom"
+          data-html="true"
+          title="<div style='background-color: #fff1cc; color: #ff3507'>MITGLIEDSNAME muss ausgefüllt werden</div>"></i>
       </div>
 
 
       <label for="emailField">E-MAIL</label>
       <div class="iconized-field inconized iconized-field-solid">
-        <input id="emailField" type="text" class="form-control" formControlName="email">
-        <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true" style="padding-left: 10px; padding-right: 31px;"></i>
+        <input
+          id="email"
+          type="text"
+          class="form-control"
+          formControlName="email"
+          (blur)="showError(email)">
+        <i
+          #email
+          id='email'
+          class="fa fa-envelope fa-lg fa-fw"
+          aria-hidden="true"
+          style="padding-left: 10px; padding-right: 31px;"
+          data-toggle="tooltip"
+          data-trigger="manual"
+          data-placement="bottom"
+          data-html="true"
+          title="<div style='background-color: #fff1cc; color: #ff3507'>E-MAIL muss ausgefüllt werden und gültig sein</div>"></i>
       </div>
 
       <label for="passwordField">PASSWORT</label>
       <div class="iconized-field inconized iconized-field-solid">
-        <input id="passwordField" type="text" class="form-control" formControlName="password" *ngIf="showPassword" style="padding-right: 125px">
-        <input id="passwordField" type="password" class="form-control" formControlName="password" *ngIf="!showPassword" style="padding-right: 125px">
-        <i class="fa fa-lock fa-lg fa-fw" aria-hidden="true" style="padding-left: 13px; padding-right: 28px;"></i>
+        <input
+          id="password"
+          type="text"
+          class="form-control"
+          formControlName="password"
+          *ngIf="showPassword"
+          style="padding-right: 125px"
+          (blur)="showError(password)">
+        <input
+          id="password"
+          type="password"
+          class="form-control"
+          formControlName="password"
+          *ngIf="!showPassword"
+          style="padding-right: 125px"
+          (blur)="showError(password)">
+        <i
+          #password
+          id='password'
+          class="fa fa-lock fa-lg fa-fw"
+          aria-hidden="true"
+          style="padding-left: 13px; padding-right: 28px;"
+          data-toggle="tooltip"
+          data-trigger="manual"
+          data-placement="bottom"
+          data-html="true"
+          title="<div style='background-color: #fff1cc; color: #ff3507'>PASSWORT muss ausgefüllt werden und mindestens 4 Zeichen lang sein
+</div>"></i>
 
         <div class="show-password">
           <label for="showPasswordField" style="padding-top: 11px;font-size: small;">
@@ -46,17 +131,9 @@
 
       </div>
 
-
-
-
-
-
-
-
-
       <div class="checkbox">
         <label class="center-block">
-      <input id="firstNameField" type="checkbox" formControlName="termsAcceptance">
+      <input id="termsAcceptanceField" type="checkbox" formControlName="termsAcceptance">
       Ich willige die Verarbeitung und Nutzung meiner Daten gemäß der Datenschutzerklärung ein.
     </label>
       </div>

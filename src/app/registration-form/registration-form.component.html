@@ -4,62 +4,59 @@
 
       <label for="firstNameField">VORNAME</label>
       <div class="iconized-field inconized iconized-field-solid">
-          <input type="text" class="form-control" formControlName="firstName">
-          <i class="fa fa-user fa-lg fa-fw" aria-hidden="true" style="padding-left: 14px; padding-right: 28px;"></i>
+        <input id="firstNameField" type="text" class="form-control" formControlName="firstName">
+        <i class="fa fa-user fa-lg fa-fw" aria-hidden="true" style="padding-left: 14px; padding-right: 28px;"></i>
       </div>
 
       <div *ngIf="form.get('firstName').hasError('required') && form.get('firstName').touched" class="alert alter-danger">
         muss ausgefüllt werden
       </div>
 
-      <label for="lastName">NACHNAME</label>
-        <div class="iconized-field inconized iconized-field-solid">
-            <input type="text" class="form-control" formControlName="lastName">
-            <i class="fa fa-user fa-lg fa-fw" aria-hidden="true" style="padding-left: 14px; padding-right: 28px;"></i>
-        </div>
-
-      <label for="username">MITGLIEDSNAME</label>
+      <label for="lastNameField">NACHNAME</label>
       <div class="iconized-field inconized iconized-field-solid">
-          <input type="text" class="form-control" formControlName="username" placeholder="Dein Mitgliedsname ist öffentlich">
-          <i class="fa fa-user fa-lg fa-fw" aria-hidden="true" style="padding-left: 14px; padding-right: 28px;"></i>
+        <input id="lastNameField" type="text" class="form-control" formControlName="lastName">
+        <i class="fa fa-user fa-lg fa-fw" aria-hidden="true" style="padding-left: 14px; padding-right: 28px;"></i>
       </div>
 
-
-      <label for="username">E-MAIL</label>
+      <label for="usernameField">MITGLIEDSNAME</label>
       <div class="iconized-field inconized iconized-field-solid">
-          <input type="text" class="form-control" formControlName="email">
-          <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true" style="padding-left: 10px; padding-right: 31px;"></i>
+        <input id="usernameField" type="text" class="form-control" formControlName="username" placeholder="Dein Mitgliedsname ist öffentlich">
+        <i class="fa fa-user fa-lg fa-fw" aria-hidden="true" style="padding-left: 14px; padding-right: 28px;"></i>
+      </div>
+
+
+      <label for="emailField">E-MAIL</label>
+      <div class="iconized-field inconized iconized-field-solid">
+        <input id="emailField" type="text" class="form-control" formControlName="email">
+        <i class="fa fa-envelope fa-lg fa-fw" aria-hidden="true" style="padding-left: 10px; padding-right: 31px;"></i>
+      </div>
+
+      <label for="passwordField">PASSWORT</label>
+      <div class="iconized-field inconized iconized-field-solid">
+        <input id="passwordField" type="text" class="form-control" formControlName="password" *ngIf="showPassword" style="padding-right: 125px">
+        <input id="passwordField" type="password" class="form-control" formControlName="password" *ngIf="!showPassword" style="padding-right: 125px">
+        <i class="fa fa-lock fa-lg fa-fw" aria-hidden="true" style="padding-left: 13px; padding-right: 28px;"></i>
+
+        <div class="show-password">
+          <label for="showPasswordField" style="padding-top: 11px;font-size: small;">
+          <input id="showPasswordField" type="checkbox" (change)="toggleShowPassword($event)">
+          Anzeigen
+          </label>
+        </div>
+
       </div>
 
 
 
-      <div class="">
-        <div class="">
 
-        </div>
 
-        <div class="">
-          <label for="password">PASSWORT</label>
-          <div class="iconized-field inconized iconized-field-solid">
-            <input type="text" class="form-control" formControlName="password" *ngIf="showPassword">
-            <input type="password" class="form-control" formControlName="password" *ngIf="!showPassword">
-              <i class="fa fa-lock fa-lg fa-fw" aria-hidden="true" style="padding-left: 13px; padding-right: 28px;"></i>
-          </div>
 
-        </div>
 
-        <div class="">
-          <label class="center-block">
-        <input type="checkbox" (change)="toggleShowPassword($event)">
-        Anzeigen
-      </label>
-        </div>
-      </div>
 
 
       <div class="checkbox">
         <label class="center-block">
-      <input type="checkbox" formControlName="termsAcceptance">
+      <input id="firstNameField" type="checkbox" formControlName="termsAcceptance">
       Ich willige die Verarbeitung und Nutzung meiner Daten gemäß der Datenschutzerklärung ein.
     </label>
       </div>

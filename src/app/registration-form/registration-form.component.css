@@ -32,7 +32,19 @@ input[type=text]:focus, input[type=password]:focus {
   padding: 12px 21px;
   color: WhiteSmoke;
   trasition: .5s;
+}
 
+.show-password {
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  padding: 1px 21px;
+  background-color: WhiteSmoke;
+  trasition: .5s;
+  border-radius:  0 4px 4px 0;
+  border-left-color: lightgrey;
+  border-left-style: solid;
+  border-width: 1px;
 }
 .iconized-field input[type=text]:focus + i, input[type=password]:focus + i {
   color: lightblue;

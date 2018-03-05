@@ -4,126 +4,40 @@
 
       <label for="firstNameField">VORNAME</label>
       <div class="iconized-field inconized iconized-field-solid">
-        <input
-          id="firstNameField"
-          type="text"
-          class="form-control"
-          formControlName="firstName"
-          (blur)="showError(firstName)">
-            <i
-              #firstName
-              id='firstName'
-              class="red-tooltip"
-              style="background-color: yellow"
-              data-toggle="tooltip"
-              data-trigger="manual"
-              data-placement="bottom"
-              data-html="true"
-              title="<div style='background-color: #fff1cc; color: #ff3507'>VORNAME muss ausgefüllt werden</div>"
-              class="fa fa-user fa-lg fa-fw"
-              aria-hidden="true"
-              style="padding-left: 14px; padding-right: 28px;"></i>
-          </div>
+        <input id="firstNameField" type="text" class="form-control" formControlName="firstName" (blur)="showError(firstName)">
+        <i #firstName id='firstName' class="red-tooltip" style="background-color: yellow" data-toggle="tooltip" data-trigger="manual" data-placement="bottom" data-html="true" title="<div style='background-color: #fff1cc; color: #ff3507'>VORNAME muss ausgefüllt werden</div>"
+          class="fa fa-user fa-lg fa-fw" aria-hidden="true" style="padding-left: 14px; padding-right: 28px;"></i>
+      </div>
 
 
       <label for="lastNameField">NACHNAME</label>
       <div class="iconized-field inconized iconized-field-solid">
-        <input
-          id="lastNameField"
-          type="text"
-          class="form-control"
-          formControlName="lastName"
-          (blur)="showError(lastName)">
-        <i
-          #lastName
-          id='lastName'
-          class="fa fa-user fa-lg fa-fw"
-          aria-hidden="true"
-          style="padding-left: 14px; padding-right: 28px;"
-          data-toggle="tooltip"
-          data-trigger="manual"
-          data-placement="bottom"
-          data-html="true"
-          title="<div style='background-color: #fff1cc; color: #ff3507'>NACHNAME muss ausgefüllt werden</div>"></i>
+        <input id="lastNameField" type="text" class="form-control" formControlName="lastName" (blur)="showError(lastName)">
+        <i #lastName id='lastName' class="fa fa-user fa-lg fa-fw" aria-hidden="true" style="padding-left: 14px; padding-right: 28px;" data-toggle="tooltip" data-trigger="manual" data-placement="bottom" data-html="true" title="<div style='background-color: #fff1cc; color: #ff3507'>NACHNAME muss ausgefüllt werden</div>"></i>
       </div>
 
       <label for="usernameField">MITGLIEDSNAME</label>
       <div class="iconized-field inconized iconized-field-solid">
-        <input
-          id="username"
-          type="text"
-          class="form-control"
-          formControlName="username"
-          placeholder="Dein Mitgliedsname ist öffentlich"
-          (blur)="showError(username)">
-        <i
-          #username
-          id='username'
-          class="fa fa-user fa-lg fa-fw"
-          aria-hidden="true"
-          style="padding-left: 14px; padding-right: 28px;"
-          data-toggle="tooltip"
-          data-trigger="manual"
-          data-placement="bottom"
-          data-html="true"
-          title="<div style='background-color: #fff1cc; color: #ff3507'>MITGLIEDSNAME muss ausgefüllt werden</div>"></i>
+        <input id="username" type="text" class="form-control" formControlName="username" placeholder="Dein Mitgliedsname ist öffentlich" (blur)="showError(username)">
+        <i #username id='username' class="fa fa-user fa-lg fa-fw" aria-hidden="true" style="padding-left: 14px; padding-right: 28px;" data-toggle="tooltip" data-trigger="manual" data-placement="bottom" data-html="true" title="<div style='background-color: #fff1cc; color: #ff3507'>MITGLIEDSNAME muss ausgefüllt werden</div>"></i>
       </div>
 
 
       <label for="emailField">E-MAIL</label>
       <div class="iconized-field inconized iconized-field-solid">
-        <input
-          id="email"
-          type="text"
-          class="form-control"
-          formControlName="email"
-          (blur)="showError(email)">
-        <i
-          #email
-          id='email'
-          class="fa fa-envelope fa-lg fa-fw"
-          aria-hidden="true"
-          style="padding-left: 10px; padding-right: 31px;"
-          data-toggle="tooltip"
-          data-trigger="manual"
-          data-placement="bottom"
-          data-html="true"
-          title="<div style='background-color: #fff1cc; color: #ff3507'>E-MAIL muss ausgefüllt werden und gültig sein</div>"></i>
+        <input id="email" type="text" class="form-control" formControlName="email" (blur)="showError(email)">
+        <i #email id='email' class="fa fa-envelope fa-lg fa-fw" aria-hidden="true" style="padding-left: 10px; padding-right: 31px;" data-toggle="tooltip" data-trigger="manual" data-placement="bottom" data-html="true" title="<div style='background-color: #fff1cc; color: #ff3507'>E-MAIL muss ausgefüllt werden und gültig sein</div>"></i>
       </div>
 
       <label for="passwordField">PASSWORT</label>
       <div class="iconized-field inconized iconized-field-solid">
-        <input
-          id="password"
-          type="text"
-          class="form-control"
-          formControlName="password"
-          *ngIf="showPassword"
-          style="padding-right: 125px"
-          (blur)="showError(password)">
-        <input
-          id="password"
-          type="password"
-          class="form-control"
-          formControlName="password"
-          *ngIf="!showPassword"
-          style="padding-right: 125px"
-          (blur)="showError(password)">
-        <i
-          #password
-          id='password'
-          class="fa fa-lock fa-lg fa-fw"
-          aria-hidden="true"
-          style="padding-left: 13px; padding-right: 28px;"
-          data-toggle="tooltip"
-          data-trigger="manual"
-          data-placement="bottom"
-          data-html="true"
-          title="<div style='background-color: #fff1cc; color: #ff3507'>PASSWORT muss ausgefüllt werden und mindestens 4 Zeichen lang sein
+        <input id="password" type="text" class="form-control" formControlName="password" *ngIf="showPassword" style="padding-right: 125px" (blur)="showError(password)">
+        <input id="password" type="password" class="form-control" formControlName="password" *ngIf="!showPassword" style="padding-right: 125px" (blur)="showError(password)">
+        <i #password id='password' class="fa fa-lock fa-lg fa-fw" aria-hidden="true" style="padding-left: 13px; padding-right: 28px;" data-toggle="tooltip" data-trigger="manual" data-placement="bottom" data-html="true" title="<div style='background-color: #fff1cc; color: #ff3507'>PASSWORT muss ausgefüllt werden und mindestens 4 Zeichen lang sein
 </div>"></i>
 
         <div class="show-password">
-          <label for="showPasswordField" style="padding-top: 11px;font-size: small;">
+          <label for="showPasswordField" style="padding-top: 7px;font-size: small;">
           <input id="showPasswordField" type="checkbox" (change)="toggleShowPassword($event)">
           Anzeigen
           </label>
@@ -131,18 +45,22 @@
 
       </div>
 
-      <div class="checkbox">
-        <label class="center-block">
-      <input id="termsAcceptanceField" type="checkbox" formControlName="termsAcceptance">
-      Ich willige die Verarbeitung und Nutzung meiner Daten gemäß der Datenschutzerklärung ein.
-    </label>
+
+      <label class="center-block row">
+
+        <div class="col-sm-1" >
+                <input #terms id="termsAcceptanceField" type="checkbox" formControlName="termsAcceptance" style="margin-left: 20px">
+        </div>
+
+      <div class="col-sm-11">
+              Ich willige die Verarbeitung und Nutzung meiner Daten gemäß der <a href="#">Datenschutzerklärung</a> ein.
       </div>
+          </label>
 
     </div>
-    <button class="btn btn-success btn-block" style="background-color: #a8d000; border-color: #a8d000;" type="submit" [disabled]="form.invalid">
+    <button class="btn btn-success btn-block" style="background-color: #a8d000; border-color: #a8d000;" type="submit" [disabled]="form.invalid || !form.value.termsAcceptance">
       Jetzt registrieren
     </button>
-
 
 
   </form>

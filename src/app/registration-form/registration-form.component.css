@@ -39,7 +39,7 @@ input[type=text]:focus, input[type=password]:focus {
   position: absolute;
   right: 1px;
   top: 1px;
-  padding: 1px 21px;
+  padding: 6px 21px;
   background-color: WhiteSmoke;
   trasition: .5s;
   border-radius:  0 4px 4px 0;
@@ -68,4 +68,9 @@ input[type=text]:focus, input[type=password]:focus {
 ::placeholder {
     color: lightgrey;
     opacity: 1;
+}
+
+label {
+      font-size: x-small;
+      margin-bottom: 0;
 }

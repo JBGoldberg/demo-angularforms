@@ -52,7 +52,6 @@ export class RegistrationFormComponent implements OnInit {
   }
 
   registerUser() {
-    console.log(this.form.value)
 
     let _user = new User();
     _user.firstName = this.form.value.firstName
@@ -64,6 +63,8 @@ export class RegistrationFormComponent implements OnInit {
       _user.termsAcceptanceDate = new Date()
 
     console.log(_user)
+    alert("User created. Please check the console about data model created before mocked persistence.");
+
   }
 
 }
